@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelompok Kami - Infografis Majas</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1e293b;
+      --accent: #ffcc00; /* Kuning menyala */
+      --accent-glow: rgba(255, 204, 0, 0.5);
+      --border: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Reset & Menghilangkan kotak biru saat klik */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    /* Animasi masuk halaman halus */
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInPage 0.8s ease-out;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; filter: blur(5px); }
+      to { opacity: 1; filter: blur(0); }
+    }
+
+    /* Tombol Kembali di Pojok Kiri */
+    .navbar {
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      z-index: 1000;
+    }
+
+    .btn-back {
+      text-decoration: none;
+      color: var(--text);
+      background: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .btn-back:hover {
+      border-color: var(--accent);
+      color: #b45309;
+      transform: translateX(-5px);
+      box-shadow: 0 10px 20px var(--accent-glow);
+    }
+
+    .btn-back:active { transform: scale(0.95); }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    header p { color: #64748b; }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+      padding: 40px 20px;
+      max-width: 1200px;
+    }
+
+    /* Member Card dengan Glow Kuning */
+    .member-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 50px 40px;
+      text-align: center;
+      width: 280px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+    }
+
+    .member-card:hover {
+      transform: translateY(-15px);
+      border-color: var(--accent);
+      box-shadow: 0 25px 50px var(--accent-glow), 
+                  0 0 20px rgba(255, 204, 0, 0.2);
+    }
+
+    /* Lingkaran Nomor Absen */
+    .absent-circle {
+      width: 90px;
+      height: 90px;
+      border: 2px solid #f1f5f9;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #94a3b8;
+      transition: 0.4s;
+    }
+
+    .member-card:hover .absent-circle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: scale(1.1);
+    }
+
+    .member-card h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .member-card p {
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .role-line {
+      width: 30px;
+      height: 4px;
+      background: var(--accent);
+      margin: 15px auto 0;
+      border-radius: 10px;
+      opacity: 0.3;
+      transition: 0.3s;
+    }
+
+    .member-card:hover .role-line {
+      width: 60px;
+      opacity: 1;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 60px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="btn-back" id="btn-back">
+      <i class="ri-arrow-left-s-line"></i> Kembali
+    </a>
+  </nav>
+
+  <header>
+    <h1>KELOMPOK 1</h1>
+    <p>Kelas 8a - Proyek Infografis Digital</p>
+  </header>
+
+  <div class="kelompok">
+    
+    <div class="member-card">
+      <div class="absent-circle">10</div>
+      <h2>Bagas Raditia irawan</h2>
+      <div class="role-line"></div>
+    </div>
+
+    <div class="member-card">
+      <div class="absent-circle">15</div>
+      <h2>Eka putri</h2>
+      <div class="role-line"></div>
+    </div>
+
+    <div class="member-card">
+      <div class="absent-circle">16</div>
+      <h2>Ellie Oktavia</h2>
+      <div class="role-line"></div>
+    </div>
+
+    <div class="member-card">
+      <div class="absent-circle">24</div>
+      <h2>M.Zidan Wijaya</h2>
+      <div class="role-line"></div>
+    </div>
+  </div>
+
+  <footer>
+     &copy; 2026
+  </footer>
+
+  <script>
+    // Transisi memudar saat klik kembali
+    document.getElementById('btn-back').addEventListener('click', function(e) {
+      e.preventDefault();
+      let url = this.href;
+      document.body.style.opacity = '0';
+      document.body.style.transition = '0.5s';
+      document.body.style.filter = 'blur(10px)';
+      setTimeout(() => { window.location.href = url; }, 500);
+    });
+  </script>
+
+</body>
+</html>
